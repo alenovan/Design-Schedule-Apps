@@ -1,16 +1,13 @@
-# greggy_schedule
+# Implementsi
 
-A new Flutter application.
+Design By : https://dribbble.com/greggygf
+
+https://dribbble.com/shots/15213293-Course-App
+
+![alt text](https://cdn.dribbble.com/users/3724659/screenshots/15213293/media/8479e10b9d3df5b8186bf14123dce0e1.png?compress=1&resize=800x600)
+
+
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Status Project (On Progress)
