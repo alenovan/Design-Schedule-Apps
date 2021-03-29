@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:greggy_schedule/screen/dashboard/DashboardScreen.dart';
+import 'package:greggy_schedule/screen/MainMenu.dart';
 import 'package:greggy_schedule/screen/splash/SplashScreen.dart';
 
 void main() {
@@ -15,14 +16,12 @@ class MyApp extends StatelessWidget {
     return ScreenUtilInit(
       allowFontScaling: false,
       builder: () => MaterialApp(
-        title: 'Flutter Demo',
-        // onGenerateRoute: (RouteSettings settings) {
-        //   switch (settings.name) {
-        // },
+        debugShowCheckedModeBanner: false,
         theme: ThemeData(
-          primarySwatch: Colors.blue,
+          primarySwatch: Colors.green,
+          visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
-        home: DashboardScreen(),
+        home: MainMenu(),
       ),
     );
   }

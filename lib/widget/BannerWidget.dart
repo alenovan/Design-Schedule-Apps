@@ -67,17 +67,25 @@ class _ButtonState extends State<BannerWidget> {
                               Container(
                                 padding: EdgeInsets.only(left: 20.w, right: 20.w),
                                 decoration: new BoxDecoration(
-                                  color: whiteText,
                                   borderRadius:
                                   new BorderRadius.all(Radius.circular(10.0)),
+                                  gradient: new LinearGradient(
+                                      colors: [
+                                        const Color(0xFFFFC93C),
+                                        const Color(0xFFFFA41B),
+                                      ],
+                                      begin: const FractionalOffset(0.0, 0.0),
+                                      end: const FractionalOffset(1.0, 0.0),
+                                      stops: [0.0, 1.0],
+                                      tileMode: TileMode.clamp),
                                 ),
-                                height: 24.h,
+                                height: 27.h,
                                 width: 120.w,
                                 alignment: Alignment.center,
                                 child: Text(
                                   "Upgrade Now",
                                   style: dm.copyWith(
-                                      color: secondText,
+                                      color: whiteText,
                                       fontSize: 14.sp,
                                       fontWeight: FontWeight.w700),
                                   textAlign: TextAlign.center,
@@ -112,7 +120,7 @@ class _ButtonState extends State<BannerWidget> {
           Align(
             alignment: Alignment.centerRight,
             child: Container(
-              margin: EdgeInsets.only(right: 30.w),
+              margin: EdgeInsets.only(right: 20.w),
               child: Image.asset(
                 plansIconsPng,
                 height: 70.h,

@@ -1,6 +1,8 @@
 
+import 'package:fleva_icons/fleva_icons.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:greggy_schedule/utils/Color.dart';
 import 'package:greggy_schedule/utils/Typography.dart';
@@ -27,7 +29,7 @@ class _NewsCardState extends State<NewsCard> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 220.w,
+      width: 200.w,
       child: Card(
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10.0),
@@ -44,25 +46,57 @@ class _NewsCardState extends State<NewsCard> {
               child: Image.network(widget.image),
             ),
             Container(
-              padding: EdgeInsets.only(left: 10.w, right: 10.w, top: 15.h),
-              child: Text(
-                widget.date,
-                style: dm.copyWith(
-                    fontWeight: FontWeight.w600,
-                    fontSize: 14.sp,
-                    color: primaryText),
-              ),
-            ),
-            Container(
               padding: EdgeInsets.only(left: 10.w, right: 10.w, top: 12.h),
               child: Text(
                 widget.title,
                 style: dm.copyWith(
-                    fontWeight: FontWeight.w500,
-                    fontSize: 15.sp,
+                    fontWeight: FontWeight.w700,
+                    fontSize: 20.sp,
                     color: primaryText),
               ),
-            )
+            ),
+           Container(
+             padding: EdgeInsets.only(left: 10.w, right: 10.w, top: 12.h),
+             child:  Row(
+               children: [
+                 Container(
+                   child: Text(
+                     "5.0",
+                     style: dm.copyWith(
+                         fontWeight: FontWeight.w700,
+                         fontSize: 14.sp,
+                         color: primaryText),
+                   ),
+                 ),
+                 Container(
+                   padding: EdgeInsets.only(left: 4.w),
+                   child: RatingBar.builder(
+                     initialRating: 3,
+                     minRating: 1,
+                     direction: Axis.horizontal,
+                     allowHalfRating: true,
+                     itemCount: 5,
+                     itemSize: 12.h,
+                     itemBuilder: (context, _) => Icon(
+                       FlevaIcons.star,
+                       color: Colors.amber,
+                     ),
+                     onRatingUpdate: (rating) {
+                       print(rating);
+                     },
+                   ),
+                 ),
+                 Container(
+                   child: Text(
+                     " (223 reviews)",
+                     style: dm.copyWith(
+                         fontSize: 13.sp,
+                         color: reviewTextColor),
+                   ),
+                 ),
+               ],
+             ),
+           )
           ],
         ),
       ),
