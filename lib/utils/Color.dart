@@ -6,6 +6,7 @@ var primaryColor = Color(0xFF0956E0);
 var secondColor = Color(0xFF0967EF) ;
 var whiteColor = Color(0xFFFBFBFC);
 var iconUnColor = Color(0xFFACACAC);
+var starColor = Color(0xFFFFCD4B);
 //text
 var whiteText = Color(0xFFFFFFFF);
 var primaryText = Color(0xFF243B53);

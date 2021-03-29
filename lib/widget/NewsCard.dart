@@ -9,17 +9,16 @@ import 'package:greggy_schedule/utils/Typography.dart';
 
 class NewsCard extends StatefulWidget {
   final Widget child;
-  final int type;
   final String date;
-  final String title;
+  final double star;
+  final String title,review,lessons,time,starText;
   final String image;
   NewsCard({
     Key key,
     @required this.child,
-    this.type,
     this.date,
     this.title,
-    this.image,
+    this.image,  this.review, this.lessons, this.time,  this.star, this.starText,
   }) : super(key: key);
   @override
   _NewsCardState createState() => _NewsCardState();
@@ -61,18 +60,19 @@ class _NewsCardState extends State<NewsCard> {
                children: [
                  Container(
                    child: Text(
-                     "5.0",
+                     "${widget.starText}",
                      style: dm.copyWith(
                          fontWeight: FontWeight.w700,
-                         fontSize: 14.sp,
+                         fontSize: 13.sp,
                          color: primaryText),
                    ),
                  ),
                  Container(
                    padding: EdgeInsets.only(left: 4.w),
                    child: RatingBar.builder(
-                     initialRating: 3,
+                     initialRating: widget.star,
                      minRating: 1,
+                     glowColor: starColor,
                      direction: Axis.horizontal,
                      allowHalfRating: true,
                      itemCount: 5,
@@ -88,7 +88,7 @@ class _NewsCardState extends State<NewsCard> {
                  ),
                  Container(
                    child: Text(
-                     " (223 reviews)",
+                     " (${widget.review} reviews)",
                      style: dm.copyWith(
                          fontSize: 13.sp,
                          color: reviewTextColor),
@@ -96,7 +96,53 @@ class _NewsCardState extends State<NewsCard> {
                  ),
                ],
              ),
-           )
+           ),
+            Container(
+              padding: EdgeInsets.only(left: 10.w, right: 10.w, top: 12.h),
+              child:  Row(
+                children: [
+                  Row(
+                    children: [
+                      Container(
+                        child: Icon(
+                          FlevaIcons.file_text_outline,
+                          color: iconUnColor,
+                          size: 15.sp,
+                        ),
+                      ),
+                      Container(
+                        child: Text(
+                          " ${widget.lessons} lessons",
+                          style: dm.copyWith(
+                              fontSize: 13.sp,
+                              color: iconUnColor),
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(width: 10.h,),
+                  Row(
+                    children: [
+                      Container(
+                        child: Icon(
+                          FlevaIcons.clock_outline,
+                          color: iconUnColor,
+                          size: 15.sp,
+                        ),
+                      ),
+                      Container(
+                        child: Text(
+                          " ${widget.time}",
+                          style: dm.copyWith(
+                              fontSize: 13.sp,
+                              color: iconUnColor),
+                        ),
+                      ),
+                    ],
+                  )
+                ],
+              ),
+            )
           ],
         ),
       ),

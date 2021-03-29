@@ -1,5 +1,6 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:fleva_icons/fleva_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_boxicons/flutter_boxicons.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -56,21 +57,30 @@ class DashboardScreen extends StatelessWidget {
               ),
               Row(
                 children: [
-                  Container(
-                      margin: EdgeInsets.only(right: 15.w),
-                      height: 30.h,
-                      width: 35.w,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10.0),
-                          color: Colors.white,
-                          boxShadow: [
-                            BoxShadow(
-                                spreadRadius: 2,
-                                blurRadius: 3,
-                                offset: Offset(2, 6),
-                                color: greyVeryYoung)
-                          ]),
-                      child: SvgPicture.asset(searchIcons)),
+                  InkWell(
+                    onTap: (){
+                      print("search button");
+                    },
+                    child: Container(
+                        margin: EdgeInsets.only(right: 15.w),
+                        height: 30.h,
+                        width: 35.w,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10.0),
+                            color: Colors.white,
+                            boxShadow: [
+                              BoxShadow(
+                                  spreadRadius: 2,
+                                  blurRadius: 3,
+                                  offset: Offset(2, 6),
+                                  color: greyVeryYoung)
+                            ]),
+                        child: Icon(
+                          FlevaIcons.search,
+                          color: primaryColor,
+                          size: 25.sp,
+                        )),
+                  ),
                   Container(
                       margin: EdgeInsets.only(right: 10.w),
                       height: 30.h,
@@ -211,7 +221,7 @@ class DashboardScreen extends StatelessWidget {
                 //   sub: "Education is important, so learn more to be successful!",
                 // ),
                 Container(
-                  height: 200.h,
+                  height: 215.h,
                   child: ListView(
                     scrollDirection: Axis.horizontal,
                     children: <Widget>[
@@ -221,38 +231,62 @@ class DashboardScreen extends StatelessWidget {
                           image:
                               "https://ichef.bbci.co.uk/live-experience/cps/800/cpsprodpb/B1C9/production/_116831554_f4a67123-aade-49bb-adb8-77a123b3a0e1.jpg",
                           title: "User Interface Trends in 2020",
-                          date: "21 Oktober 2020",
+                          time: "4h 1m",
+                          lessons: "5",
+                          starText: "5.0",
+                          review: "255",
+                          star: 5.0,
                         ),
                       ),
                       NewsCard(
                         image:
-                            "https://ichef.bbci.co.uk/live-experience/cps/800/cpsprodpb/B1C9/production/_116831554_f4a67123-aade-49bb-adb8-77a123b3a0e1.jpg",
+                        "https://ichef.bbci.co.uk/live-experience/cps/800/cpsprodpb/B1C9/production/_116831554_f4a67123-aade-49bb-adb8-77a123b3a0e1.jpg",
                         title: "User Interface Trends in 2020",
-                        date: "21 Oktober 2020",
+                        time: "4h 1m",
+                        lessons: "5",
+                        starText: "5.0",
+                        review: "255",
+                        star: 5.0,
                       ),
                       NewsCard(
                         image:
-                            "https://ichef.bbci.co.uk/live-experience/cps/800/cpsprodpb/B1C9/production/_116831554_f4a67123-aade-49bb-adb8-77a123b3a0e1.jpg",
+                        "https://ichef.bbci.co.uk/live-experience/cps/800/cpsprodpb/B1C9/production/_116831554_f4a67123-aade-49bb-adb8-77a123b3a0e1.jpg",
                         title: "User Interface Trends in 2020",
-                        date: "21 Oktober 2020",
+                        time: "4h 1m",
+                        lessons: "5",
+                        starText: "5.0",
+                        review: "255",
+                        star: 5.0,
                       ),
                       NewsCard(
                         image:
-                            "https://ichef.bbci.co.uk/live-experience/cps/800/cpsprodpb/B1C9/production/_116831554_f4a67123-aade-49bb-adb8-77a123b3a0e1.jpg",
+                        "https://ichef.bbci.co.uk/live-experience/cps/800/cpsprodpb/B1C9/production/_116831554_f4a67123-aade-49bb-adb8-77a123b3a0e1.jpg",
                         title: "User Interface Trends in 2020",
-                        date: "21 Oktober 2020",
+                        time: "4h 1m",
+                        lessons: "5",
+                        starText: "5.0",
+                        review: "255",
+                        star: 5.0,
                       ),
                       NewsCard(
                         image:
-                            "https://ichef.bbci.co.uk/live-experience/cps/800/cpsprodpb/B1C9/production/_116831554_f4a67123-aade-49bb-adb8-77a123b3a0e1.jpg",
+                        "https://ichef.bbci.co.uk/live-experience/cps/800/cpsprodpb/B1C9/production/_116831554_f4a67123-aade-49bb-adb8-77a123b3a0e1.jpg",
                         title: "User Interface Trends in 2020",
-                        date: "21 Oktober 2020",
+                        time: "4h 1m",
+                        lessons: "5",
+                        starText: "5.0",
+                        review: "255",
+                        star: 5.0,
                       ),
                       NewsCard(
                         image:
-                            "https://ichef.bbci.co.uk/live-experience/cps/800/cpsprodpb/B1C9/production/_116831554_f4a67123-aade-49bb-adb8-77a123b3a0e1.jpg",
+                        "https://ichef.bbci.co.uk/live-experience/cps/800/cpsprodpb/B1C9/production/_116831554_f4a67123-aade-49bb-adb8-77a123b3a0e1.jpg",
                         title: "User Interface Trends in 2020",
-                        date: "21 Oktober 2020",
+                        time: "4h 1m",
+                        lessons: "5",
+                        starText: "5.0",
+                        review: "255",
+                        star: 5.0,
                       )
                     ],
                   ),
