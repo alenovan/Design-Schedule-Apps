@@ -23,7 +23,7 @@ class _MainMenuState extends State<MainMenu> {
   GlobalKey _envelopeIconKey = GlobalKey();
 
   // Defining the initial Position of the tile
-  Offset _tilePosition = Offset(258.0, 0.0);
+  Offset _tilePosition = Offset(258.w, 0.h);
 
   _changePosition(int index) {
     List<GlobalKey> _keyList = [
@@ -39,7 +39,7 @@ class _MainMenuState extends State<MainMenu> {
     setState(() {});
   }
 
-  final List<Widget> _children = <Widget> [
+  final List<Widget> _children = <Widget>[
     DashboardScreen(),
     ScheduleScreen(Colors.deepOrange),
     ScheduleScreen(Colors.green)
@@ -51,14 +51,20 @@ class _MainMenuState extends State<MainMenu> {
       body: Stack(
         children: [
           _children[_index],
+          Align(alignment: Alignment.bottomCenter,
+            child: Container(
+              width: double.infinity,
+              color: whiteColor,
+              height: 20.0,
+              child: Text(""),
+            ),
+          ),
           Align(
             alignment: Alignment.bottomCenter,
             child: Stack(children: <Widget>[
               Container(
-                margin: EdgeInsets.only(top: 5.h),
-                height: 55.h,
                 decoration: BoxDecoration(
-                  color: Colors.white,
+                  color: whiteColor,
                   borderRadius: BorderRadius.only(
                     topRight: Radius.circular(22.w),
                     topLeft: Radius.circular(22.w),
@@ -66,12 +72,14 @@ class _MainMenuState extends State<MainMenu> {
                   boxShadow: [
                     BoxShadow(
                       color: Colors.grey.withOpacity(0.2),
-                      spreadRadius: 3,
-                      blurRadius: 2,
-                      offset: Offset(0, 3), // changes position of shadow
+                      spreadRadius: -8,
+                      blurRadius: 1,
+                      offset: Offset(-10.0, -10.0), //(x,y), // changes position of shadow
                     ),
                   ],
                 ),
+                height: 65.h,
+                margin: EdgeInsets.only(top: 12.h),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
@@ -88,24 +96,25 @@ class _MainMenuState extends State<MainMenu> {
                     ),
                     Container(
                       width: MediaQuery.of(context).size.width,
-                      height: 45.0,
+                      height: 45.h,
                       color: Colors.transparent,
                     ),
                   ],
                 ),
               ),
+
               AnimatedPositioned(
                 curve: Curves.easeIn,
                 duration: Duration(milliseconds: 300),
-                top: 47.h,
+                top: 60.h,
                 left: _tilePosition.dx + 0.0 - (-1.w),
                 child: Container(
-                  margin: EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 0.0),
+                  margin: EdgeInsets.fromLTRB(0.0, 12.h, 0.0, 0.0),
                   child: Align(
                     alignment: Alignment.center,
                     child: Container(
-                      width: 23.0,
-                      height: 16.0,
+                      width: 21.w,
+                      height: 14.h,
                       decoration: BoxDecoration(
                         color: primaryColor,
                         borderRadius: BorderRadius.only(
@@ -117,17 +126,18 @@ class _MainMenuState extends State<MainMenu> {
                   ),
                 ),
               ),
+
               Container(
-                margin: EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 0.0),
+                margin: EdgeInsets.fromLTRB(0.0, 20.h, 0.0, 0.0),
                 child: BottomNavigationBar(
                   type: BottomNavigationBarType.fixed,
                   showSelectedLabels: false,
                   iconSize: 23.sp,
                   showUnselectedLabels: false,
                   unselectedIconTheme:
-                  IconThemeData(color: iconUnColor, size: 22.sp),
+                      IconThemeData(color: iconUnColor, size: 24.sp),
                   selectedIconTheme:
-                  IconThemeData(color: primaryColor, size: 23.sp),
+                      IconThemeData(color: primaryColor, size: 23.sp),
                   currentIndex: _index,
                   elevation: 0.0,
                   onTap: (index) {
@@ -137,9 +147,12 @@ class _MainMenuState extends State<MainMenu> {
                   backgroundColor: Colors.transparent,
                   items: <BottomNavigationBarItem>[
                     BottomNavigationBarItem(
-                      icon: Icon(
-                        FlevaIcons.home,
-                        key: _homeIconKey,
+                      icon: Container(
+                        // transform: Matrix4.translationValues(0.0, 23.h, 0.0),
+                        child: Icon(
+                          FlevaIcons.home,
+                          key: _homeIconKey,
+                        ),
                       ),
                       title: Text(
                         '',
@@ -147,30 +160,36 @@ class _MainMenuState extends State<MainMenu> {
                       ),
                     ),
                     BottomNavigationBarItem(
-                      icon: Icon(
-                        FlevaIcons.calendar,
-                        key: _calendarIconKey,
-                      ),
+                      icon: Container(
+                          // transform: Matrix4.translationValues(0.0, 23.h, 0.0),
+                          child: Icon(
+                            FlevaIcons.calendar,
+                            key: _calendarIconKey,
+                          )),
                       title: Text(
                         '',
                         style: TextStyle(),
                       ),
                     ),
                     BottomNavigationBarItem(
-                      icon: Icon(
-                        FlevaIcons.file_text_outline,
-                        key: _fileIconKey,
-                      ),
+                      icon: Container(
+                          // transform: Matrix4.translationValues(0.0, 23.h, 0.0),
+                          child: Icon(
+                            FlevaIcons.file_text_outline,
+                            key: _fileIconKey,
+                          )),
                       title: Text(
                         '',
                         style: TextStyle(),
                       ),
                     ),
                     BottomNavigationBarItem(
-                      icon: Icon(
-                        FlevaIcons.email_outline,
-                        key: _envelopeIconKey,
-                      ),
+                      icon: Container(
+                          // transform: Matrix4.translationValues(0.0, 23.h, 0.0),
+                          child: Icon(
+                            FlevaIcons.email_outline,
+                            key: _envelopeIconKey,
+                          )),
                       title: Text(
                         '',
                         style: TextStyle(),
@@ -178,7 +197,8 @@ class _MainMenuState extends State<MainMenu> {
                     ),
                   ],
                 ),
-              )
+              ),
+
             ]),
           ),
 

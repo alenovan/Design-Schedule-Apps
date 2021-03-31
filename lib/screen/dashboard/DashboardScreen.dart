@@ -32,6 +32,7 @@ class DashboardScreen extends StatelessWidget {
         .toList();
 
     return Container(
+      color: whiteColor,
       margin: EdgeInsets.only(top: 50.h),
       child: Stack(
         children: [
@@ -216,81 +217,81 @@ class DashboardScreen extends StatelessWidget {
                     ],
                   ),
                 ),
-                // BannerWidget(
-                //   title: "Upgrade your plans",
-                //   sub: "Education is important, so learn more to be successful!",
-                // ),
-                Container(
-                  height: 215.h,
-                  child: ListView(
-                    scrollDirection: Axis.horizontal,
-                    children: <Widget>[
-                      Container(
-                        margin: EdgeInsets.only(left: 18.w),
-                        child: NewsCard(
+                Expanded(
+                  child: Container(
+                    height: 225.h,
+                    margin: EdgeInsets.only(bottom: 112.h),
+                    child: ListView(
+                      scrollDirection: Axis.horizontal,
+                      children: <Widget>[
+                        Container(
+                          margin: EdgeInsets.only(left: 18.w),
+                          child: NewsCard(
+                            image:
+                            "https://ichef.bbci.co.uk/live-experience/cps/800/cpsprodpb/B1C9/production/_116831554_f4a67123-aade-49bb-adb8-77a123b3a0e1.jpg",
+                            title: "User Interface Trends in 2020",
+                            time: "4h 1m",
+                            lessons: "5",
+                            starText: "5.0",
+                            review: "20",
+                            star: 5.0,
+                          ),
+                        ),
+                        NewsCard(
                           image:
-                              "https://ichef.bbci.co.uk/live-experience/cps/800/cpsprodpb/B1C9/production/_116831554_f4a67123-aade-49bb-adb8-77a123b3a0e1.jpg",
+                          "https://ichef.bbci.co.uk/live-experience/cps/800/cpsprodpb/B1C9/production/_116831554_f4a67123-aade-49bb-adb8-77a123b3a0e1.jpg",
                           title: "User Interface Trends in 2020",
                           time: "4h 1m",
                           lessons: "5",
                           starText: "5.0",
-                          review: "255",
+                          review: "20",
                           star: 5.0,
                         ),
-                      ),
-                      NewsCard(
-                        image:
-                        "https://ichef.bbci.co.uk/live-experience/cps/800/cpsprodpb/B1C9/production/_116831554_f4a67123-aade-49bb-adb8-77a123b3a0e1.jpg",
-                        title: "User Interface Trends in 2020",
-                        time: "4h 1m",
-                        lessons: "5",
-                        starText: "5.0",
-                        review: "255",
-                        star: 5.0,
-                      ),
-                      NewsCard(
-                        image:
-                        "https://ichef.bbci.co.uk/live-experience/cps/800/cpsprodpb/B1C9/production/_116831554_f4a67123-aade-49bb-adb8-77a123b3a0e1.jpg",
-                        title: "User Interface Trends in 2020",
-                        time: "4h 1m",
-                        lessons: "5",
-                        starText: "5.0",
-                        review: "255",
-                        star: 5.0,
-                      ),
-                      NewsCard(
-                        image:
-                        "https://ichef.bbci.co.uk/live-experience/cps/800/cpsprodpb/B1C9/production/_116831554_f4a67123-aade-49bb-adb8-77a123b3a0e1.jpg",
-                        title: "User Interface Trends in 2020",
-                        time: "4h 1m",
-                        lessons: "5",
-                        starText: "5.0",
-                        review: "255",
-                        star: 5.0,
-                      ),
-                      NewsCard(
-                        image:
-                        "https://ichef.bbci.co.uk/live-experience/cps/800/cpsprodpb/B1C9/production/_116831554_f4a67123-aade-49bb-adb8-77a123b3a0e1.jpg",
-                        title: "User Interface Trends in 2020",
-                        time: "4h 1m",
-                        lessons: "5",
-                        starText: "5.0",
-                        review: "255",
-                        star: 5.0,
-                      ),
-                      NewsCard(
-                        image:
-                        "https://ichef.bbci.co.uk/live-experience/cps/800/cpsprodpb/B1C9/production/_116831554_f4a67123-aade-49bb-adb8-77a123b3a0e1.jpg",
-                        title: "User Interface Trends in 2020",
-                        time: "4h 1m",
-                        lessons: "5",
-                        starText: "5.0",
-                        review: "255",
-                        star: 5.0,
-                      )
-                    ],
+                        NewsCard(
+                          image:
+                          "https://ichef.bbci.co.uk/live-experience/cps/800/cpsprodpb/B1C9/production/_116831554_f4a67123-aade-49bb-adb8-77a123b3a0e1.jpg",
+                          title: "User Interface Trends in 2020",
+                          time: "4h 1m",
+                          lessons: "5",
+                          starText: "5.0",
+                          review: "20",
+                          star: 5.0,
+                        ),
+                        NewsCard(
+                          image:
+                          "https://ichef.bbci.co.uk/live-experience/cps/800/cpsprodpb/B1C9/production/_116831554_f4a67123-aade-49bb-adb8-77a123b3a0e1.jpg",
+                          title: "User Interface Trends in 2020",
+                          time: "4h 1m",
+                          lessons: "5",
+                          starText: "5.0",
+                          review: "20",
+                          star: 5.0,
+                        ),
+                        NewsCard(
+                          image:
+                          "https://ichef.bbci.co.uk/live-experience/cps/800/cpsprodpb/B1C9/production/_116831554_f4a67123-aade-49bb-adb8-77a123b3a0e1.jpg",
+                          title: "User Interface Trends in 2020",
+                          time: "4h 1m",
+                          lessons: "5",
+                          starText: "5.0",
+                          review: "20",
+                          star: 5.0,
+                        ),
+                        NewsCard(
+                          image:
+                          "https://ichef.bbci.co.uk/live-experience/cps/800/cpsprodpb/B1C9/production/_116831554_f4a67123-aade-49bb-adb8-77a123b3a0e1.jpg",
+                          title: "User Interface Trends in 2020",
+                          time: "4h 1m",
+                          lessons: "5",
+                          starText: "5.0",
+                          review: "20",
+                          star: 5.0,
+                        )
+                      ],
+                    ),
                   ),
                 ),
+                SizedBox(height: 50.h,)
               ],
             ),
           ),

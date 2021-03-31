@@ -35,17 +35,12 @@ class _AppsMenuState extends State<AppsMenu> {
                       width: 50.w,
                       height: 45.h,
                       child: ClipRRect(
-                          borderRadius: new BorderRadius.only(
-                            topLeft: const Radius.circular(10.0),
-                            topRight: const Radius.circular(10.0),
-                            bottomLeft: const Radius.circular(10.0),
-                            bottomRight: const Radius.circular(10.0),
-                          ),
+                          borderRadius: new BorderRadius.all(Radius.circular(10.h)),
                           child: Icon(widget.icon,color: secondText,size: 28.sp,)),
                     ))),
             decoration: new BoxDecoration(
               color: boxColor,
-              borderRadius: new BorderRadius.all(Radius.circular(10.0)),
+              borderRadius: new BorderRadius.all(Radius.circular(10.h)),
             ),
           ),
           Container(
