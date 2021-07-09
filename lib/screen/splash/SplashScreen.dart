@@ -1,5 +1,6 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
+import 'package:greggy_schedule/screen/MainMenu.dart';
 import 'package:greggy_schedule/utils/Color.dart';
 import 'package:greggy_schedule/utils/Images.dart';
 import 'package:greggy_schedule/utils/Typography.dart';
@@ -60,23 +61,28 @@ class _SplashScreenState extends State<SplashScreen> {
               margin: EdgeInsets.only(left: 40.w,right: 40.w,bottom: 2.h),
               child: Text("By studying here, you can discover your hidden talents!",style: dm.copyWith(color: Colors.white54,fontSize: 19.sp,height: 1.3),textAlign: TextAlign.center,),
             ),
-            Container(
-              margin: EdgeInsets.only(left: 40.w,right: 40.h,top: 50.h),
-              height: 55.h,
-              alignment: Alignment.center,
-              decoration: new BoxDecoration(
-                borderRadius: new BorderRadius.all(Radius.circular(20.0)),
-                gradient: new LinearGradient(
-                    colors: [
-                      const Color(0xFFFFC93C),
-                      const Color(0xFFFFA41B),
-                    ],
-                    begin: const FractionalOffset(0.0, 0.0),
-                    end: const FractionalOffset(1.0, 0.0),
-                    stops: [0.0, 1.0],
-                    tileMode: TileMode.clamp),
+            InkWell(
+              onTap: (){
+                Navigator.of(context).push(MaterialPageRoute(builder: (context) => MainMenu()));
+              },
+              child: Container(
+                margin: EdgeInsets.only(left: 40.w,right: 40.h,top: 50.h),
+                height: 55.h,
+                alignment: Alignment.center,
+                decoration: new BoxDecoration(
+                  borderRadius: new BorderRadius.all(Radius.circular(20.0)),
+                  gradient: new LinearGradient(
+                      colors: [
+                        const Color(0xFFFFC93C),
+                        const Color(0xFFFFA41B),
+                      ],
+                      begin: const FractionalOffset(0.0, 0.0),
+                      end: const FractionalOffset(1.0, 0.0),
+                      stops: [0.0, 1.0],
+                      tileMode: TileMode.clamp),
+                ),
+                child: Text("Start Learning Now!",style: dm.copyWith(color: Colors.white,fontSize: 19.sp,height: 1.3,fontWeight: FontWeight.w700),textAlign: TextAlign.center,),
               ),
-              child: Text("Start Learning Now!",style: dm.copyWith(color: Colors.white,fontSize: 19.sp,height: 1.3,fontWeight: FontWeight.w700),textAlign: TextAlign.center,),
             )
           ],
         ),
